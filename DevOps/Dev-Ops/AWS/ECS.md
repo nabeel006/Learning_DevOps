@@ -19,3 +19,34 @@ A container is a standardized unit of software development that holds everything
 After you create and store your image, you create an Amazon ECS task definition. A _task definition_ is a blueprint for your application. It is a text file in JSON format that describes the parameters and one or more containers that form your application. For example, you can use it to specify the image and parameters for the operating system, which containers to use, which ports to open for your application, and what data volumes to use with the containers in the task. The specific parameters available for your task definition depend on the needs of your specific application.
 
 After you define your task definition, you deploy it as either a service or a task on your cluster. A _cluster_ is a logical grouping of tasks or services that runs on the capacity infrastructure that is registered to a cluster.
+
+
+
+### How does ECS work?
+
+Task:
+
+have two components.
+**ECS Containers instance** 
+
+In AWS ECS (Elastic Container Service), an ECS Container Instance is essentially an Amazon EC2 (Elastic Compute Cloud) instance that has been registered with the ECS cluster and is capable of running Docker containers.and also runs the AWS Container agent.
+**Container agent:**
+It is responsible for comuncation between ECS and the instances.
+Also provides the status of running containers.
+Collect Clusters and make sure the version is available.
+
+**ENI:**
+ENI stands for Elastic Network Interface. An ENI is a virtual network interface that you can attach to an EC2 instance in your Virtual Private Cloud (VPC). ENIs are fundamental components of networking in AWS, and they enable EC2 instances to communicate with other resources within the VPC and the broader internet.
+How the contianer interacts with EC2 Host and with the internet
+
+
+**Task Defination:**
+  
+In Amazon ECS (Elastic Container Service), a task definition is a blueprint or configuration file that describes how a Docker container should be launched as part of a task. It defines various parameters such as which Docker image to use, how much CPU and memory to allocate, networking configuration, environment variables, and more.
+#### Fargate Launch Type: 
+It is a compute engine in ECS that user to launch the containers  without monitor  clusters .
+AWS Manages the conatianers for you.
+EC2 Launch Type:
+
+
+
